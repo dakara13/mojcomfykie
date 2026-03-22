@@ -6,6 +6,9 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install --upgrade pip
+
+RUN pip install --index-url https://download.pytorch.org/whl/cpu torch torchvision torchaudio
+
 RUN pip install -r requirements.txt
 RUN find /app/custom_nodes -name requirements.txt -exec pip install -r {} \; || true
 
