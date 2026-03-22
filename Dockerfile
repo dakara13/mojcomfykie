@@ -7,7 +7,7 @@ COPY . /app
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN find custom_nodes -name requirements.txt -exec pip install -r {} \; || true
+RUN find /app/custom_nodes -name requirements.txt -exec pip install -r {} \; || true
 
 EXPOSE 8188
 
